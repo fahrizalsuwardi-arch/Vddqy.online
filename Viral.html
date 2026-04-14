@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Promo Lemari Viral</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Lemari Viral Lagi Diskon Besar 😳">
@@ -13,35 +15,40 @@
 </head>
 
 <body>
+  <p>Mengalihkan ke Shopee...</p>
 
-<h2>Lemari Lagi Diskon!</h2>
+  <script>
+    var ua = navigator.userAgent.toLowerCase();
 
-<img src="https://i.ibb.co/hJ3x48sp/20260414-135012.jpg" width="100%">
+    const affiliate = "https://s.shopee.co.id/4frw2w7HmG";
+    const playstore = "https://play.google.com/store/apps/details?id=com.shopee.id";
 
-<p>Mengalihkan ke Shopee...</p>
+    // DETECT BOT (FB, WA, dll)
+    if (
+      ua.includes("facebookexternalhit") ||
+      ua.includes("facebot") ||
+      ua.includes("facebook") ||
+      ua.includes("whatsapp") ||
+      ua.includes("telegram") ||
+      ua.includes("twitter")
+    ) {
+      // STOP redirect buat bot
+    } else {
 
-<script>
-var ua = navigator.userAgent.toLowerCase();
+      // 🔥 langsung coba buka app (instan)
+      window.location.href = "intent://shopee.co.id/#Intent;scheme=https;package=com.shopee.id;end";
 
-// BLOCK BOT FACEBOOK
-if (!ua.includes("facebookexternalhit") && 
-    !ua.includes("facebot") && 
-    !ua.includes("facebook")) {
+      // fallback ke affiliate (0.3 detik)
+      setTimeout(function () {
+        window.location.href = affiliate;
+      }, 300);
 
-  setTimeout(function () {
-
-    // COBA BUKA APP SHOPEE (DEEPLINK)
-    window.location.href = "https://play.google.com/store/apps/details?id=com.shopee.id";
-
-    // FALLBACK KE LINK AFFILIATE
-    setTimeout(function(){
-      window.location.href = "https://s.shopee.co.id/4frw2w7HmG";
-    }, 300);
-
-  }, 500);
-
-}
-</script>
+      // fallback terakhir ke Playstore (kalau belum install)
+      setTimeout(function () {
+        window.location.href = playstore;
+      }, 2000);
+    }
+  </script>
 
 </body>
 </html>
