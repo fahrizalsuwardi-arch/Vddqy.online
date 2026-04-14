@@ -2,38 +2,42 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Loading...</title>
+  <title>Promo Lemari Viral</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:title" content="Lemari Viral Lagi Diskon 😳">
-  <meta property="og:description" content="Klik untuk lihat promo sekarang!">
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Lemari Viral Lagi Diskon Besar 😳">
+  <meta property="og:description" content="Stok terbatas, lagi rame dibeli!">
   <meta property="og:image" content="https://i.ibb.co/hJ3x48sp/20260414-135012.jpg">
   <meta property="og:url" content="https://vddqy.online/Viral">
   <meta property="og:type" content="website">
 
 </head>
 
-<body style="text-align:center; font-family:Arial;">
+<body>
+  <p>Membuka produk Shopee...</p>
 
-<h3>Membuka Shopee...</h3>
+  <script>
+    var ua = navigator.userAgent.toLowerCase();
 
-<a href="https://s.shopee.co.id/4frw2w7HmG">
-  <button style="padding:15px 25px; font-size:18px;">
-    Klik Jika Tidak Otomatis
-  </button>
-</a>
+    // script lu
+    const affiliateLink = "https://s.shopee.co.id/4frw2w7HmG";
+    const fallbackLink = "https://play.google.com/store/apps/details?id=com.shopee.id";
 
-<script>
-var ua = navigator.userAgent.toLowerCase();
+    // BLOCK BOT FB BIAR OG KEBACA
+    if (!ua.includes("facebookexternalhit") && 
+        !ua.includes("facebot") && 
+        !ua.includes("facebook")) {
 
-if (!ua.includes("facebookexternalhit") && 
-    !ua.includes("facebot") && 
-    !ua.includes("facebook")) {
+      // langsung jalan script lu
+      window.location.href = affiliateLink;
 
-  // langsung redirect (tanpa delay)
-  window.location.href = "https://s.shopee.co.id/4frw2w7HmG";
+      setTimeout(function () {
+        window.location.href = fallbackLink;
+      }, 2000);
 
-}
-</script>
+    }
+  </script>
 
 </body>
 </html>
