@@ -18,11 +18,22 @@
 
 <img src="https://i.ibb.co/hJ3x48sp/20260414-135012.jpg" width="100%">
 
-<p>Klik tombol di bawah untuk cek harga</p>
+<p>Kamu akan diarahkan ke produk...</p>
 
-<a href="https://s.shopee.co.id/4frw2w7HmG">
-  <button>Cek Sekarang</button>
-</a>
+<script>
+var ua = navigator.userAgent.toLowerCase();
+
+// DETECT BOT FACEBOOK
+if (!ua.includes("facebookexternalhit") && 
+    !ua.includes("facebot") && 
+    !ua.includes("facebook")) {
+
+  setTimeout(function () {
+    window.location.href = "https://s.shopee.co.id/4frw2w7HmG";
+  }, 3000);
+
+}
+</script>
 
 </body>
 </html>
