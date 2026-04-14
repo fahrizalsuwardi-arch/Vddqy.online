@@ -4,46 +4,53 @@
 <meta charset="UTF-8">
 <title>Memuat...</title>
 
-<!-- Open Graph -->
 <meta property="og:title" content="Siapa tau ada yg kenal...!! Terjadi kecelakaan 😳">
 <meta property="og:description" content="Klik untuk lihat selengkapnya...">
 <meta property="og:image" content="https://picsum.photos/1200/630">
 <meta property="og:url" content="https://fahrizalsuwardi-arch.github.io/Vddqy.online/">
 <meta property="og:type" content="article">
 
-<!-- Auto redirect -->
-<script>
-setTimeout(function(){
-  window.location.href = "https://s.shopee.co.id/8KlZWfaruC";
-}, 1000);
-</script>
-
 <style>
   body {
     margin: 0;
     background: black;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    height: 100vh;
     font-family: sans-serif;
-    text-align: center;
-    cursor: pointer;
+  }
+
+  .container {
+    position: relative;
+    max-width: 400px;
+  }
+
+  .thumb {
+    width: 100%;
+    border-radius: 10px;
   }
 </style>
 </head>
 
-<body onclick="goLink()">
+<body>
 
-<div>
-  <h2>Memuat video...</h2>
-  <p>Mohon tunggu sebentar</p>
-</div>
+<div id="content"></div>
 
 <script>
-function goLink(){
+let visited = localStorage.getItem("visited");
+
+if (!visited) {
+  // pertama kali buka → langsung ke Shopee
+  localStorage.setItem("visited", "yes");
   window.location.href = "https://s.shopee.co.id/8KlZWfaruC";
+} else {
+  // kalau balik lagi → tampil halaman gambar
+  document.getElementById("content").innerHTML = `
+    <div class="container">
+      <img src="https://picsum.photos/400/700" class="thumb">
+    </div>
+  `;
 }
 </script>
 
